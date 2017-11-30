@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block body %}
+    <h2>{{ the_title }}</h2>
+    <p>Tu enviaste la siguiente información:</p>
+    <table class="table">
+        <tr>
+            <td>Numero:</td>
+            <td>{{ the_number }}</td>
+        </tr>
+        <tr>
+            <td>Numero aleatorio:</td>
+            <td>{{ the_random_number }}</td>
+        </tr>
+    </table>
+    <h3>{{ the_result }}</h3>
+        <p><a href="/entry">Regresar</a></p>
+{% endblock %}

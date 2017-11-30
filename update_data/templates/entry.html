@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block body %}
+<h2>{{ the_title }}</h2>
+<form action='/resultados' method='POST'>
+    <table class="table">
+        <p>Usa este formulario para comparar un número con uno aleatorio</p>
+        <tr>
+            <td>Número:</td>
+        </tr>
+        <tr>
+            <td><input name='numero' type='NUMBER' width='60' required></td>
+        </tr>
+    </table>
+    <p>Cuando estes listo dale click al boton:</p>
+    <p><input value='Obtener' type='SUBMIT'></p>
+</form>
+    <p><a href="/registros">Ver los datos registrados</a></p>
+{% endblock %}

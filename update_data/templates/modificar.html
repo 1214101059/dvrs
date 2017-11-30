@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block body %}
+    <h2>{{ the_title }}</h2>
+    <form action='/update' method='POST'>
+        <table class="table">
+            <p>Usa este formulario para modificar los datos que necesites</p>
+            <tr>
+                <td><input name='id' type='HIDDEN' value ="{{ the_id }}"></td>
+                <td>Número:</td>
+                <td><input name='numero' type='NUMBER' value ="{{ the_num }}" required></td>
+                <td>Número aleatorio:</td>
+                <td><input name='numero_ale' type='TEXT' value ="{{ the_rand_num }}" required></td>
+            </tr>
+        </table>
+        <p>Cuando estes listo dale click al boton:</p>
+        <p><input value='Modificar' type='SUBMIT'></p>
+    </form>
+        <form action='/delete' method='POST'>
+        <td><input name='id' type='HIDDEN' value ="{{ the_id }}"></td>
+        <p>¿Desea eliminar el registro?:</p>
+        <p><input value='Eliminar' type='SUBMIT'></p>
+        </form>
+        <p><a href="/registros">Ver los datos registrados</a></p>
+{% endblock %}

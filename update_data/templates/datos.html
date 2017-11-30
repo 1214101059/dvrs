@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block body %}
+    <h2>{{ the_title }}</h2>
+    {% if the_data %}
+        <table class="table">
+         <tr>
+             {% for row_title in the_row_titles %}
+                <th>{{row_title}}</th>
+             {% endfor %}
+         </tr>
+         {% for fila in the_data %}
+             <tr>
+                 {% for f in fila %}
+                    <td>{{f}}</td>
+                 {% endfor %}
+             </tr>
+         {% endfor %}
+        </table>
+        <h3>Modificar datos</h3>
+        <h4>Seleccione el "id" del registro que desee Modificar</h4>
+        <form action='/modificar' method='POST'>
+            <select name="iden" required >
+                <option value=""></option>
+                  {% for id in ids %}
+                      {% for i in id %}
+                  <option value="{{ i }}">{{ i }}</option>
+                          {% endfor %}
+                  {% endfor %}
+            </select>
+            <input type="submit" value="Modificar">
+        </form>
+        {% else %}
+        <h3>No se encontraron resultados</h3>
+    {% endif %}
+    <p><a href="/entry">Regresar</a></p>
+{% endblock %}
